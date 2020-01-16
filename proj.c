@@ -4,6 +4,7 @@ code by finding my letters from something like a dictionary
 so that it will take the commands from each letter and
 flash the light on the board.
 The site for the book is "https://raks.ee/books/pdf/exploringraspberrypi.pdf"
+Page: 194-195
 */
 
 #include <stdio.h>
