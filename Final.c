@@ -10,22 +10,24 @@ Page: 194-195
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <unistd.h>
 #define GPIO_NUMBER "4"
-#define GPIO4_PATH "/sys/class/gpio/gpio/
+#define GPIO4_PATH "/sys/class/gpio/gpio4/"
 #define GPIO_SYSFS "/sys/class/gpio/"
 const int LED_PIN = 1;
-void setup() {
-  // initialize digital pin LED_PIN as an output.
-  pinMode(LED_PIN, OUTPUT);
-}
+
+
+void writeGPIO(char filename[], char value[]){
+ FILE* fp; // create a file pointer fp
+ fp = fopen(filename, "w+"); // open file for write/update
+ fprintf(fp, "%s", value); // send the value to the file
+ fclose(fp); // close the file using fp
+ }
 // the loop function runs over and over again forever
 void loop(){
   char phrase[] = "This is what will be blinked on the light";
   int length = strlen(phrase);
-  Serial.print("phrase length: "); Serial.println(length);
   for (int num=0; num<length; num++){
-    Serial.println(phrase[num]);
     char ch = phrase[num];
     switch (ch)
     {
@@ -164,385 +166,385 @@ void loop(){
   }
 }
 void a(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
 void b(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
 void c(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void d(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void e(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void f(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void g(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void h(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void i(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void j(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void k(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void l(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void m(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void n(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void o(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void p(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void q(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void r(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void s(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void t(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void u(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void v(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void w(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void x(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void y(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void z(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(450);
-  digitalWrite(LED_PIN, HIGH);
-  delay(450);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
   }
   void space(){
-  delay(1200);
+  usleep(1200000);
   }
