@@ -24,7 +24,6 @@ void writeGPIO(char filename[], char value[]){
  fclose(fp); // close the file using fp
  }
 // the loop function runs over and over again forever
-void loop(){
   char phrase[] = "This is what will be blinked on the light";
   int length = strlen(phrase);
   for (int num=0; num<length; num++){
@@ -164,8 +163,7 @@ void loop(){
       break;
     }
   }
-}
-void a(){
+int a(){
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "0");
@@ -175,97 +173,9 @@ void a(){
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(1000000);
   }
-void b(){
+int b(){
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-void c(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void d(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void e(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void f(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void g(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void h(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "1");
@@ -281,137 +191,11 @@ void c(){
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(1000000);
   }
-  void i(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void j(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
+int c(){
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(1000000);
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void k(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void l(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void m(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void n(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void o(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void p(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void q(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void r(){
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "0");
@@ -425,7 +209,63 @@ void c(){
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(1000000);
   }
-  void s(){
+  int d(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int e(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int f(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int g(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int h(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "0");
@@ -439,47 +279,23 @@ void c(){
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(1000000);
   }
-  void t(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void u(){
+  int i(){
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(1000000);
   }
-  void v(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
+  int j(){
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void w(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "1");
@@ -491,13 +307,9 @@ void c(){
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(1000000);
   }
-  void x(){
+  int k(){
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(450000);
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "1");
@@ -509,27 +321,9 @@ void c(){
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(1000000);
   }
-  void y(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
+  int l(){
   writeGPIO(GPIO4_PATH "value", "1");
   usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(450000);
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
-  writeGPIO(GPIO4_PATH "value", "0");
-  usleep(1000000);
-  }
-  void z(){
-  writeGPIO(GPIO4_PATH "value", "1");
-  usleep(1000000);
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(450000);
   writeGPIO(GPIO4_PATH "value", "1");
@@ -545,6 +339,210 @@ void c(){
   writeGPIO(GPIO4_PATH "value", "0");
   usleep(1000000);
   }
-  void space(){
+  int m(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int n(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int o(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int p(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int q(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int r(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int s(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int t(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int u(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int v(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int w(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int x(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int y(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int z(){
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(1000000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "1");
+  usleep(450000);
+  writeGPIO(GPIO4_PATH "value", "0");
+  usleep(1000000);
+  }
+  int space(){
   usleep(1200000);
   }
