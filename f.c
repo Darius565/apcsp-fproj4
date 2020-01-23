@@ -408,10 +408,12 @@ void c(){
   void space(){
   usleep(1200000);
   }
-void main(){
-  char phrase[10] = "hello";
-  for (void num=0; num<10; num++){
-    char ch = phrase[num];
+int main(){
+  char input[10], name[10];
+  fgets(input, 10, stdin);
+  sscanf(input, "%s", name); 
+  for (int num=0; num<10; num++){
+    char ch = name[num];
     switch (ch)
     {
       case 'a':
